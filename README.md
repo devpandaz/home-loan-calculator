@@ -30,6 +30,9 @@ Our task is to create a home loan calculator that can:
 - Calculate home loan repayment
 - Provide the details for every month's repayment
 
+# Operating System
+[Windows](https://www.microsoft.com/en-my/windows)
+
 # Requirements
 You need to have Chrome installed as this app uses Chrome to show the result history or the details of a specific calculate result. 
 
