@@ -8,6 +8,7 @@ This is a home loan calculator that can calculate home loan repayments and provi
 - [Home Loan Calculator](#home-loan-calculator)
   - [Official Website](#official-website)
   - [Intro](#intro)
+  - [Operating System](#operating-system)
   - [Requirements](#requirements)
   - [Install](#install)
   - [Usage](#usage)
@@ -31,7 +32,7 @@ Our task is to create a home loan calculator that can:
 - Provide the details for every month's repayment
 
 # Operating System
-[Windows](https://www.microsoft.com/en-my/windows)
+This program only works on [Windows](https://www.microsoft.com/en-my/windows). 
 
 # Requirements
 You need to have Chrome installed as this app uses Chrome to show the result history or the details of a specific calculate result. 
