@@ -19,7 +19,7 @@ This is a home loan calculator that can calculate home loan repayments and provi
     - Help
     - Dark Mode Support
   - [Languages used](#languages-used)
-  - [Libraries and Frameworks used](libraries-and-frameworks-used)
+  - [Libraries and Frameworks used](#libraries-and-frameworks-used)
 
 # Official website
 Visit the [official website](https://jpro-22.github.io/home-loan-calculator/) of this app! 
