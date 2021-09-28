@@ -36,29 +36,27 @@
 			}
 		}
 
-		// the script below is to fire actions whenever user closed the "X" button to close the chrome app
-		// $(document).ready(function() {
-			$(window).on('mouseover', (function () {
+		// the script below is to fire actions whenever user clicked the "X" button to close the chrome window
+		$(window).on('mouseover', (function () {
+			want_to_close = false;
+		}));
+		$(window).on('mouseout', (function () {
+			want_to_close = true;
+		}));
+
+		window.addEventListener("contextmenu", function(e) {
+			e.preventDefault();
+		});
+
+		$(document).keydown(function (e) {
+			if ((e.key == "F5") || (e.key.toUpperCase() == "R" && prevKey == "CONTROL") || (e.key.toUpperCase() == "F5" && (prevKey == "CONTROL" || prevKey == "SHIFT"))) {
 				want_to_close = false;
-			}));
-			$(window).on('mouseout', (function () {
+			}
+			else if ((e.key.toUpperCase() == "W" && prevKey == "CONTROL") || (e.key.toUpperCase() == "F4" && (prevKey == "ALT" || prevKey == "CONTROL"))) {                
 				want_to_close = true;
-			}));
-
-			window.addEventListener("contextmenu", function(e) {
-				e.preventDefault();
-			});
-
-			$(document).keydown(function (e) {
-				if ((e.key == "F5") || (e.key.toUpperCase() == "R" && prevKey == "CONTROL") || (e.key.toUpperCase() == "F5" && (prevKey == "CONTROL" || prevKey == "SHIFT"))) {
-					want_to_close = false;
-				}
-				else if ((e.key.toUpperCase() == "W" && prevKey == "CONTROL") || (e.key.toUpperCase() == "F4" && (prevKey == "ALT" || prevKey == "CONTROL"))) {                
-					want_to_close = true;
-				}
-				prevKey = e.key.toUpperCase();
-			});
-		// });
+			}
+			prevKey = e.key.toUpperCase();
+		});
 
 		function beforeunload() {
 			if (!want_to_close) {
