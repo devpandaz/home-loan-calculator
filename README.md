@@ -1,4 +1,6 @@
 # Home Loan Calculator
+![Code Grade](https://www.code-inspector.com/project/29192/status/svg) ![Code Quality Score](https://www.code-inspector.com/project/29192/score/svg)  
+
 This is a home loan calculator that can calculate home loan repayments and provide details like payment breakdown and payment schedule for each calculate result.  
   
 <p align="center"><img src="./screenshots/home-dark.png" title="Home Page in Dark Mode" alt="Home"></img></p>
