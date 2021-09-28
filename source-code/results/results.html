@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Results</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="icons/logo.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+</head>
+<body class="bootstrap">
+	<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+
+	<!--dark theme -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-dark.min.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-print.min.css">
+	
+	<!-- ionicons -->
+	<script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+
+	<script type="text/javascript" src="/eel.js"></script>
+
+	<script>
+		// after window loaded, we need to close the loading screen asap
+		window.onload = function() {
+			eel.loaded();
+			if (window.location.href.includes("dark")) {
+				document.body.classList.toggle("bootstrap-dark");
+			}
+		}
+
+		// the script below is to fire actions whenever user closed the "X" button to close the chrome app
+		// $(document).ready(function() {
+			$(window).on('mouseover', (function () {
+				want_to_close = false;
+			}));
+			$(window).on('mouseout', (function () {
+				want_to_close = true;
+			}));
+
+			window.addEventListener("contextmenu", function(e) {
+				e.preventDefault();
+			});
+
+			$(document).keydown(function (e) {
+				if ((e.key == "F5") || (e.key.toUpperCase() == "R" && prevKey == "CONTROL") || (e.key.toUpperCase() == "F5" && (prevKey == "CONTROL" || prevKey == "SHIFT"))) {
+					want_to_close = false;
+				}
+				else if ((e.key.toUpperCase() == "W" && prevKey == "CONTROL") || (e.key.toUpperCase() == "F4" && (prevKey == "ALT" || prevKey == "CONTROL"))) {                
+					want_to_close = true;
+				}
+				prevKey = e.key.toUpperCase();
+			});
+		// });
+
+		function beforeunload() {
+			if (!want_to_close) {
+				eel.reload();
+			}
+		}
+		window.addEventListener("beforeunload", beforeunload);
+	</script>
+
+	<style>
+		.like {
+			margin-right: 10px;
+		}
+		.remove {
+			margin-right: 15px;
+		}
+	</style>
+
+	<div id="toolbar">
+		<button id="remove" class="btn btn-danger" disabled>
+			<i class="fa fa-trash"></i> Delete
+		</button>
+	</div>
+
+	<!-- results table built using bootstrap-table -->
+	<table
+		id="table"
+		data-toolbar="#toolbar"
+		data-search="true"
+		data-show-toggle="true"
+		data-sort-name="time created"
+		data-sort-order="desc"
+		data-show-columns="true"
+		data-click-to-select="true"
+		data-detail-formatter="detailFormatter"
+		data-minimum-count-columns="3"
+		data-show-pagination-switch="true"
+		data-pagination="true"
+		data-id-field="id"
+		data-page-list="[10, 25, 50, 100, all]"
+		data-response-handler="responseHandler">
+	</table>
+
+	<!-- details of specific result -->
+	<div id="details" class="container mt-4" style="display: none">
+		<button type="button" class="btn btn-outline-info mb-3" onclick="back();"><i class="fas fa-chevron-left"></i> Back</button>
+		<div class="container">
+			<div class="row justify-content-center mb-5 align-items-center">
+				<div class="col-md-4" style="border: 3px solid #42f5ec; border-radius: 25px;">
+					<p id="property-price" class="mt-3"></p>
+					<p id="down-payment"></p>
+					<p id="interest-rate"></p>
+					<p id="loan-period"></p>
+					<hr style="border-color: #05ff6d; border-width: 2px;">
+					<p id="monthly-repayment" style="color: #05d1ff;"></p>
+				</div>
+				<div id="payment-breakdown-container" class="col-md-4 mt-3" style="position: relative; height:40vh; width:40vw"></div>
+			</div>
+		</div>
+		<div id="payment-schedule-container" class="container"></div>
+		<button type="button" class="btn btn-outline-info mb-3" onclick="back();"><i class="fas fa-chevron-left"></i> Back</button>
+
+		<div class="modal fade" id="CSVSavedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLongTitle">Data exported successfully</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+				  <p>The payment schedule is saved successfully in the form of CSV file in your Downloads folder with the file name "<span style="font-weight: bold;">payment-schedule-<span id="csv-file-code"></span>.csv</span>".<br><br> Use any spreadsheet viewer to open the CSV file. <br><br>Rename it however you like for your own use.</p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</body>
+
+	<script>
+		let resultId = -1;
+		if (window.location.href.includes("?id=")) {
+			document.title = "Details";
+			resultId = window.location.href.slice(window.location.href.indexOf("=") + 1);
+			async function buildDirectDetails(id) {
+				let [propertyPrice, downPayment, interestRate, period, monthlyRepayment] = await eel.getResultsData(id)();
+				seeDetails(propertyPrice, downPayment, interestRate * 100, period, monthlyRepayment);
+			}
+			buildDirectDetails(resultId);
+		} else {
+			$(function() {
+				async function renderTable() {
+					let datasets = await eel.getResultsData()();
+					initTable(datasets);
+				}
+				renderTable();
+			})
+		}
+	</script>
+
+
+	<script>
+		var $table = $('#table')
+		var $remove = $('#remove')
+		var selections = []
+  
+		function getIdSelections() {
+		  return $.map($table.bootstrapTable('getSelections'), function (row) {
+			return row.id
+		  })
+		}
+  
+		function responseHandler(res) {
+		  $.each(res.rows, function (i, row) {
+			row.state = $.inArray(row.id, selections) !== -1
+		  })
+		  return res
+		}
+  
+		function detailFormatter(index, row) {
+		  var html = []
+		  $.each(row, function (key, value) {
+			html.push('<p><b>' + key + ':</b> ' + value + '</p>')
+		  })
+		  return html.join('')
+		}
+  
+		function twoDecimalPlacesFormatter(value) {
+			return parseFloat(value).toFixed(2);
+		}
+
+		function operateFormatter(value, row, index) {
+		  return [
+			'<a class="remove" href="javascript:void(0)" title="Remove">',
+			'<i class="fa fa-trash"></i>',
+			'</a>',
+			'<a class="details" href="javascript:void(0)" title="Details">',
+			'<i class="fa fa-external-link-alt"></i>',
+			'</a>'
+		  ].join('')
+		}
+  
+		window.operateEvents = {
+		  'click .remove': function (e, value, row, index) {
+			if (confirm("Are you sure you want to delete the selected record?")) {
+				$table.bootstrapTable('remove', {
+					field: 'id',
+					values: [row.id]
+				})
+				eel.deleteRecord(row.id);
+			}
+		  },
+		  'click .details': function (e, value, row, index) {
+			  document.getElementsByClassName("bootstrap-table")[0].style.display = "none";
+			  seeDetails(parseFloat(row["property price"]), parseFloat(row["down payment"]), parseFloat(row["interest rate"]), parseFloat(row["period"]), parseFloat(row["monthly repayment"]));
+		  }
+		}
+  
+		function totalTextFormatter(data) {
+		  return 'Total'
+		}
+  
+		function totalNameFormatter(data) {
+		  return data.length
+		}
+  
+		function totalPriceFormatter(data) {
+		  var field = this.field
+		  return '$' + data.map(function (row) {
+			return +row[field].substring(1)
+		  }).reduce(function (sum, i) {
+			return sum + i
+		  }, 0)
+		}
+  
+		function initTable(datasets) {
+		  let tableProperties = {
+			height: 800,
+			locale: 'en-US',
+			columns: [
+			  [{
+				field: 'state',
+				checkbox: true,
+				rowspan: 2,
+				align: 'center',
+				valign: 'middle'
+			  }, {
+				title: 'Result ID',
+				field: 'id',
+				rowspan: 2,
+				align: 'center',
+				valign: 'middle',
+				sortable: true,
+			  }, {
+				title: 'Result Details',
+				colspan: 7,
+				align: 'center'
+			  }],
+			  [{
+				field: 'property price',
+				title: 'Property Price (RM)',
+				sortable: true,
+				align: 'center',
+				formatter: twoDecimalPlacesFormatter
+			  },{
+				field: 'down payment',
+				title: 'Down Payment (RM)',
+				sortable: true,
+				align: 'center',
+				formatter: twoDecimalPlacesFormatter
+			  }, {
+				field: 'interest rate',
+				title: 'Interest Rate (%)',
+				sortable: true,
+				align: 'center',
+				formatter: twoDecimalPlacesFormatter
+			  },{
+				field: 'period',
+				title: 'Period (month)',
+				sortable: true,
+				align: 'center',
+			  },{
+				field: 'monthly repayment',
+				title: 'Monthly Repayment (RM)',
+				sortable: true,
+				align: 'center',
+				formatter: twoDecimalPlacesFormatter
+			  },{
+				field: 'time created',
+				title: 'Time Created',
+				sortable: true,
+				align: 'center',
+			  }, {
+				field: 'operate',
+				title: 'Action',
+				align: 'center',
+				clickToSelect: false,
+				events: window.operateEvents,
+				formatter: operateFormatter
+			  }]
+			]
+		  };
+		  tableProperties.data = datasets;
+		  $table.bootstrapTable('destroy').bootstrapTable(tableProperties)
+		  $table.on('check.bs.table uncheck.bs.table ' +
+			'check-all.bs.table uncheck-all.bs.table',
+		  function () {
+			$remove.prop('disabled', !$table.bootstrapTable('getSelections').length)
+  
+			// save your data, here just save the current page
+			selections = getIdSelections()
+			// push or splice the selections if you want to save all data selections
+		  })
+		  $remove.click(function () {
+			var ids = getIdSelections()
+			if (confirm("Are you sure you want to delete the selected records?")) {
+				$table.bootstrapTable('remove', {
+					field: 'id',
+					values: ids
+				})
+				$remove.prop('disabled', true);
+				eel.deleteRecord(ids);
+			}
+		  })
+		}
+	  </script>
+
+
+	<script>
+		function seeDetails(propertyPrice, downPayment, interestRate, period, monthlyRepayment) {
+			document.querySelector("#toolbar").style.display = "none";
+			document.getElementById("details").style.display = "block";
+			document.getElementById("property-price").innerHTML = "Property Price (RM): " + propertyPrice.toFixed(2);
+			document.getElementById("down-payment").innerHTML = "Down Payment (RM): " + downPayment.toFixed(2);
+			document.getElementById("interest-rate").innerHTML = "Interest (%): " + interestRate.toFixed(2);
+			document.getElementById("loan-period").innerHTML = "Period (months): " + period;
+			document.getElementById("monthly-repayment").innerHTML = "Monthly Repayment (RM): " + parseFloat(monthlyRepayment).toFixed(2);
+
+			renderPaymentScheduleDetails(propertyPrice - downPayment, interestRate / 100 / 12, period, monthlyRepayment);
+		}
+
+		function back() {
+			if (resultId == -1) {
+				document.getElementById("details").style.display = "none";
+				document.querySelector("#toolbar").style.display = "block";
+				document.querySelector("#payment-breakdown-chart").remove();
+				document.getElementsByClassName("bootstrap-table")[0].style.display = "block";
+			} else {
+				want_to_close = true;
+				window.close();
+			}
+		}
+	</script>
+
+	<!-- include pie chart.js library to create charts -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	<!-- payment schedule line chart -->
+	<script>
+		function renderPaymentScheduleDetails(loanAmount, monthlyInterestRate, period, monthlyRepayment) {
+			const paymentSchedule = {
+				labels: [],
+				datasets: [
+					{
+						label: 'Principal',
+						data: [],
+						fill: false,
+						borderColor: 'rgb(20, 247, 103)',
+						tension: 0.1
+					}, 
+					{
+						label: 'Interest',
+						data: [],
+						fill: false,
+						borderColor: 'rgb(247, 20, 50)',
+						tension: 0.1
+					},
+					{
+						label: 'Balance',
+						data: [],
+						fill: false,
+						borderColor: 'rgb(247, 152, 20)',
+						tension: 0.1
+					}
+				]
+			};
+			const config = {
+				type: 'line',
+				data: paymentSchedule,
+				options: {
+				  responsive: true,
+				  plugins: {
+					legend: {
+					  position: 'top',
+					},
+					title: {
+					  display: true,
+					  text: 'Payment Schedule'
+					}
+				  },
+				  scales: {
+					  x: {
+						title: {
+							display: true,
+							text: "Month",
+						}
+					  },
+					  y: {
+						title: {
+							display: true,
+							text: "RM",
+						}
+					  }
+				  }
+				},
+			};
+
+			// construct line chart and table content
+			// table content
+			document.querySelector("#payment-schedule-container").innerHTML = `
+			<div class="text-center mb-5">
+				<div id="loading" class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+					<span class="sr-only">Loading...</span>
+				</div>
+			</div>
+			<button class="btn btn-outline-success" type="button" data-toggle="collapse" data-target="#collapse-payment-schedule-content" aria-expanded="false" aria-controls="collapse-payment-schedule-content" style="width: 100%">
+				Payment Schedule Table <span style="float: right;"><i class="fas fa-chevron-down"></i></span>
+			</button>
+			<div class="collapse" id="collapse-payment-schedule-content">
+				<div style="border: 3px solid #05ed33; border-top: 0px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px">
+					<table id="payment-schedule-table" class="table table-hover table-responsive-sm">
+						<thead>
+							<tr>
+								<th scope="col">Month</th><th scope="col">Principal</th>
+								<th scope="col">Interest</th>
+								<th scope="col">Balance</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<button id="exportCSVButton" type="button" class="btn btn-outline-success mb-3 mt-3" onclick="exportCSV();" style="width: 100%;"><i class="fas fa-file-export"></i> Export as CSV</button>
+			</div>
+			<canvas id="payment-schedule-chart" class="mt-4"></canvas>
+			<div class="alert alert-info alert-dismissible fade show" role="alert">
+				Click "<strong>Balance</strong>" to toggle it off to have a more detailed view of "<strong>Principal</strong>" and "<strong>Interest</strong>".
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			`;
+
+			async function constructTableContent() {
+				let [detailsContent, totalPrinciple, totalInterest, chartPeriod, chartPrincipal, chartInterest, chartBalance] = await eel.constructTableContent(loanAmount, monthlyInterestRate, period, monthlyRepayment)();
+				document.querySelector("#payment-schedule-table").innerHTML += detailsContent;
+				document.querySelector("#loading").style.display = "none";
+				paymentSchedule["labels"] = chartPeriod;
+				paymentSchedule["datasets"][0]["data"] = chartPrincipal;
+				paymentSchedule["datasets"][1]["data"] = chartInterest;
+				paymentSchedule["datasets"][2]["data"] = chartBalance;
+
+				// create and render the line chart
+				var paymentScheduleChart = new Chart(
+					document.getElementById('payment-schedule-chart'), config
+				);
+
+				renderPaymentBreakdownPieChart(totalPrinciple, totalInterest);
+
+				window.scrollTo(0, 0);
+
+			}
+			constructTableContent();
+		}
+	</script>
+
+	<!-- payment breakdown pie chart -->
+	<script>
+
+		function renderPaymentBreakdownPieChart(totalPrinciple, totalInterest) {
+			document.querySelector("#payment-breakdown-container").innerHTML = '<canvas id="payment-breakdown-chart"></canvas>';
+
+			const paymentBreakdown = {
+				labels: [
+				  'Principal',
+				  'Interest'
+				],
+				datasets: [{
+				  label: 'Payment Breakdown',
+				  data: [totalPrinciple.toFixed(2), totalInterest.toFixed(2)],
+				  backgroundColor: [
+					'rgb(206, 66, 245)',
+					'rgb(120, 66, 245)'
+				  ],
+				  hoverOffset: 4
+				}]
+			};
+
+			const config = {
+				type: 'doughnut',
+				data: paymentBreakdown,
+				options: {
+					responsive: true,
+					maintainAspectRatio: false
+				}
+			};
+
+			var paymentBreakdownChart = new Chart(
+				document.getElementById('payment-breakdown-chart'), config
+			);
+		}
+	</script>
+
+	<script>
+		function exportCSV() {
+			document.querySelector("#exportCSVButton").disabled = true;
+			eel.exportCSV()
+		}
+
+		eel.expose(enableCSVButton);
+		function enableCSVButton() {
+			document.querySelector("#exportCSVButton").disabled = false;
+		}
+
+		eel.expose(CSVSaved);
+		function CSVSaved(fileCode) {
+			document.querySelector("#csv-file-code").innerHTML = fileCode;
+			$('#CSVSavedModal').modal('show');
+		}
+	</script>
+
+</html>
