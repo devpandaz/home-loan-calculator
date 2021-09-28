@@ -11,6 +11,8 @@ This is a home loan calculator that can calculate home loan repayments and provi
   - [Operating System](#operating-system)
   - [Requirements](#requirements)
   - [Install](#install)
+    - App
+    - Distributable
   - [Usage](#usage)
     - Using the calculator
     - See Result History
@@ -22,7 +24,9 @@ This is a home loan calculator that can calculate home loan repayments and provi
   - [Libraries and Frameworks used](#libraries-and-frameworks-used)
 
 # Official website
-Visit the [official website](https://jpro-22.github.io/home-loan-calculator/) of this app! 
+Visit the [official website](https://jpro-22.github.io/home-loan-calculator/) of this app!  
+
+![Website](./screenshots/website.png "The official website")
 
 # Intro
 This is a Malaysia Secondary Form 3 ASK (*Computer Science Basics*) year-end Python project made possible with [Tkinter](https://docs.python.org/3/library/tkinter.html) and [Eel](https://github.com/ChrisKnott/Eel).
@@ -38,8 +42,11 @@ This program only works on [Windows](https://www.microsoft.com/en-my/windows).
 You need to have Chrome installed as this app uses Chrome to show the result history or the details of a specific calculate result. 
 
 # Install
-Download and install the app from the [official website](https://jpro-22.github.io/home-loan-calculator). 
-![Website](./screenshots/website.png "The official website")
+Download and install the app [here](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator-app-installer.zip) or from the [official website](https://jpro-22.github.io/home-loan-calculator).  
+
+or...  
+
+If you don't want to install anything, download the distributable version [here](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator.zip). Extract the ```Home Loan Calculator``` folder out from the zip file and click/run ```run.cmd``` to run the program. 
 
 # Usage
 Launch the app and and you will see the home page coming up.  
