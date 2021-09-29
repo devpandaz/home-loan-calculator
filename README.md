@@ -52,6 +52,8 @@ If you don't want to install anything, download the distributable version [here]
 
 # Usage
 Launch the app and and you will see the home page coming up.  
+
+<p align="center"><img src="./screenshots/home-dark.png" title="Home Page in Dark Mode" alt="Home"></img></p>
   
 ---
 > **Using the calculator**  
