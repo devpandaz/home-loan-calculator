@@ -1,5 +1,9 @@
 # Home Loan Calculator
-![Code Grade](https://www.code-inspector.com/project/29192/status/svg) ![Code Quality Score](https://www.code-inspector.com/project/29192/score/svg)  
+![Code Grade](https://www.code-inspector.com/project/29192/status/svg) 
+![Code Quality Score](https://www.code-inspector.com/project/29192/score/svg)   
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/jPRO-22/home-loan-calculator.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jPRO-22/home-loan-calculator/alerts/) 
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jPRO-22/home-loan-calculator.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jPRO-22/home-loan-calculator/context:javascript) 
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/jPRO-22/home-loan-calculator.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jPRO-22/home-loan-calculator/context:python)  
 ![GitHub](https://img.shields.io/github/license/jPRO-22/home-loan-calculator?color=%23b603fc&style=for-the-badge) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jPRO-22/home-loan-calculator?style=for-the-badge) ![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&style=for-the-badge&up_color=%2303fcb1&up_message=online&url=https%3A%2F%2Fjpro-22.github.io%2Fhome-loan-calculator%2F)
 
 This is a home loan calculator that can calculate home loan repayments and provide details like payment breakdown and payment schedule for each calculate result.  
