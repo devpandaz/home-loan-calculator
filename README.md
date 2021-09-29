@@ -65,7 +65,7 @@ Launch the app and and you will see the home page coming up.
 > <p align="center"><img src="./screenshots/loading-screen.png" title="Loading Screen" alt="Loading Screen"></img></p>  
 > 
 > 1. Click "Results" at home page and a loading screen will show up while Chrome is starting. 
-> 2. Wait patiently for Chrome to load everytime. 
+> 2. Wait patiently for Chrome to load everytime. It will take some time especially the first time you launch the app on that day. 
 > 3. In case you rushed things and the app cannot detect it (which cause the home/calculator page to not show up after you closed the Chrome window) and the loading screen ended up there forever, you can click "Something's wrong, relaunch Chrome" to restart Chrome. 
 > 4. Avoid clicking "Something's wrong, relaunch Chrome" if everything is working correctly already. 
 ---
