@@ -6,7 +6,7 @@
 
 This is a home loan calculator that can calculate home loan repayments and provide details like payment breakdown and payment schedule for each calculate result.  
   
-<p align="center"><img src="./screenshots/home-dark.png" title="Home Page in Dark Mode" alt="Home"></img></p>
+<p align="center"><img src="./screenshots/home-light.png" title="Home Page" alt="Home"></img></p>
 
 ---
 - [Home Loan Calculator](#home-loan-calculator)
