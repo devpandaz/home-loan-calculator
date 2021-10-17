@@ -40,17 +40,23 @@ Our task is to create a home loan calculator that can:
 - Provide the details for every month's repayment
 
 # Operating System
-This program only works on [Windows](https://www.microsoft.com/en-my/windows). 
+This app only works on Windows. 
+
+To use this program on Mac, you can download the distributable version here, provided you have Python installed. Read the instructions [here](#install).
 
 # Requirements
 You need to have Chrome installed as this app uses Chrome to show the result history or the details of a specific calculate result. 
 
 # Install
-Download and install the app [here](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator-app-installer.zip) or from the [official website](https://jpro-22.github.io/home-loan-calculator).  
+Download and install the app [here](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator-app-installer.zip) or from the [official website](https://jpro-22.github.io/home-loan-calculator). *(This only works on Windows machines.)*  
 
 or...  
 
-If you don't want to install anything, download the distributable version [here](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator.zip). Extract the ```Home Loan Calculator``` folder out from the zip file and click/run ```run.cmd``` to run the program. 
+If you don't want to install anything and have Python installed in your system, or, if you are on Mac, [download](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator.zip) the distributable version. Extract the ```home-loan-calculator``` folder out from the zip file. Install the required modules by executing ```pip install -r requirements.txt``` in your system command shell. Then, run ```python main.py``` to run this program.  
+  
+> *Optionally, before you install the required modules, you can open up a new virtual environment with ```python -m venv venv``` (make sure that you execute this command in the ```~/home-loan-calculator``` directory). Then, to launch this app, at the same directory, activate the virtual environment by ```venv\scripts\activate```, then execute ```python main.py```.  
+>  
+>  Learn more about Python virtual environments [here](https://docs.python.org/3/library/venv.html).*  
 
 # Usage
 Launch the app and and you will see the home page coming up.  
