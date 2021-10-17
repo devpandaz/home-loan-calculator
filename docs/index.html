@@ -196,14 +196,18 @@
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Can I use this program without installing any app? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Can I use this program without installing any app, or, if I'm on Mac? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Yes, you can. Here's how you do it: <br><br>
+                  Yes, you can, provided <b>you have Python installed in your system</b>. Here's how you do it: <br><br>
                   1. Click the link below to download the distributable version of this program. <br><br>
                   <a href="https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator.zip" style="padding-left: 0;">Download the distributable</a><br>
-                  2. Then, extract the folder "Home Loan Calculator" from the zip file you just downloaded. <br>
-                  3. Click/Run "run.cmd" inside the folder just now. This will run the program. <br><br>
+                  2. Then, extract the folder "<b><i>home-loan-calculator</i></b>" from the zip file you just downloaded. <br>
+                  3. Install the required modules by executing <b><i>pip install -r requirements.txt</i></b> in your system command shell. <br>
+                  4. Then, run <b><i>python main.py</i></b> to run this program. <br><br>
+
+                  <i>Optionally, before you install the required modules, you can open up a new virtual environment with <b>python -m venv venv</b> (make sure that you execute this command in the <b>~/home-loan-calculator</b> directory). Then, to run this program, at the same directory, activate the virtual environment by <b>venv\scripts\activate</b>, then execute <b>python main.py</b>.
+                  <br><br>
                   <strong style="color:red;">Requirements</strong>: You need to have Chrome installed as part of this app uses Chrome. <br>
                 </p>
               </div>
