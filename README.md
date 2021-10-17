@@ -54,7 +54,7 @@ or...
 
 If you don't want to install anything and have Python installed in your system, or, if you are on Mac, [download](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator.zip) the distributable version. Extract the ```home-loan-calculator``` folder out from the zip file. Install the required modules by executing ```pip install -r requirements.txt``` in your system command shell. Then, run ```python main.py``` to run this program.  
   
-> *Optionally, before you install the required modules, you can open up a new virtual environment with ```python -m venv venv``` (make sure that you execute this command in the ```~/home-loan-calculator``` directory). Then, to launch this app, at the same directory, activate the virtual environment by ```venv\scripts\activate```, then execute ```python main.py```.*  
+> *Optionally, before you install the required modules, you can open up a new virtual environment with ```python -m venv venv``` (make sure that you execute this command in the ```~/home-loan-calculator``` directory). Then, to run this program, at the same directory, activate the virtual environment by ```venv\scripts\activate```, then execute ```python main.py```.*  
 >  
 >  *Learn more about Python virtual environments [here](https://docs.python.org/3/library/venv.html).*  
 
