@@ -18,12 +18,12 @@ This is a home loan calculator that can calculate home loan repayments and provi
     - App
     - Distributable
   - [Usage](#usage)
-    - Using the calculator
-    - See Result History
-    - What you can do at Results (result history) page
-    - What you can do at Details (details for a specific result) page
-    - Help
-    - Dark Mode Support
+    - [Using the calculator](#using-the-calculator)
+    - [See Result History](#see-result-history)
+    - [What you can do at Results (result history) page](#what-you-can-do-at-results-result-history-page)
+    - [What you can do at Details (details for a specific result) page](#what-you-can-do-at-details-details-for-a-specific-result-page)
+    - [Help](#help)
+    - [Dark Mode Support](#dark-mode-support)
   - [Languages used](#languages-used)
   - [Libraries and Frameworks used](#libraries-and-frameworks-used)
 
@@ -64,14 +64,14 @@ Launch the app and and you will see the home page coming up.
 <p align="center"><img src="./screenshots/home-dark.png" title="Home Page in Dark Mode" alt="Home"></img></p>
   
 ---
-> **Using the calculator**  
+> #### Using the calculator  
 >  
 > <p align="center"><img src="./screenshots/calculator.png" title="Calculator Page" alt="Calculator"></img></p>  
 >  
 > 1. Fill in the loan details. Press enter or click to calculate. 
 > 2. The monthly repayment will show up. You can click to see more details like payment breakdown and payment schedule. 
 ---
-> **See Result History**  
+> #### See Result History  
 >   
 > <p align="center"><img src="./screenshots/loading-screen.png" title="Loading Screen" alt="Loading Screen"></img></p>  
 > 
@@ -80,7 +80,7 @@ Launch the app and and you will see the home page coming up.
 > 3. In case you rushed things and the app cannot detect it (which cause the home/calculator page to not show up after you closed the Chrome window) and the loading screen ended up there forever, you can click "Something's wrong, relaunch Chrome" to restart Chrome. 
 > 4. Avoid clicking "Something's wrong, relaunch Chrome" if everything is working correctly already. 
 ---
-> **What you can do at Results (result history) page**  
+> #### What you can do at Results (result history) page  
 > 
 > <p align="center"><img src="./screenshots/results.png" title="Results Page" alt="Results"></img></p>  
 > 
@@ -90,7 +90,7 @@ Launch the app and and you will see the home page coming up.
 > 4. To view the details for each of the result, click on the "external link icon" (the icon next to the rubbish bin icon). 
 > 5. You can also search for records as well using the search bar on top. 
 ---
-> **What you can do at Details (details for a specific result) page**
+> #### What you can do at Details (details for a specific result) page
 >
 > *Upper part*
 > <p align="center"><img src="./screenshots/details.png" title="Details Page" alt="Details"></img></p>  
@@ -109,14 +109,14 @@ Launch the app and and you will see the home page coming up.
 >       *You can export the payment schedule data as CSV for your own use later.*  
 >       *At the line chart, you can click "Balance" to toggle its line off to have a more detailed view of "Principal" and "Interest".*
 ---
-> **Help**  
+> #### Help  
 > 
 > <p align="center"><img src="./screenshots/help.png" title="Help" alt="Help"></img></p>  
 > 
 > 1. If you have forgotten how to use the app, you can always come back here to this user manual by clicking on the "See the user manual" button.  
 > 2. If you need further help or want to report a problem, you can create a issue [here](https://github.com/jPRO-22/home-loan-calculator/issues) or [contact me via email](mailto:superjackxh@gmail.com). 
 ---
-> **Dark Mode Support**  
+> #### Dark Mode Support  
 >  
 > <p align="center"><img src="./screenshots/dark-mode-switch.png" title="Dark mode switch" alt="Dark mode switch"></img></p>  
 >  
