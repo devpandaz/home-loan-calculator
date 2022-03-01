@@ -1,7 +1,4 @@
 # Home Loan Calculator
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 ![Code Grade](https://api.codiga.io/project/29192/status/svg) 
 ![Code Quality Score](https://api.codiga.io/project/29192/score/svg) 
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/jPRO-22/home-loan-calculator.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jPRO-22/home-loan-calculator/context:python)  
