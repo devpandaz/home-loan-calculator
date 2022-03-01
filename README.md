@@ -138,23 +138,3 @@ Launch the app and and you will see the home page coming up.
 2. [Bootstrap](https://getbootstrap.com/)
 3. [bootstrap-table](https://bootstrap-table.com/)
 4. [bootstrap-dark](https://github.com/ForEvolve/bootstrap-dark)
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/TheLoneGuy"><img src="https://avatars.githubusercontent.com/u/87025141?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tan Ting Hong</b></sub></a><br /><a href="https://github.com/jPRO-22/home-loan-calculator/commits?author=TheLoneGuy" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
