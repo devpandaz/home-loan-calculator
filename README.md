@@ -2,7 +2,7 @@
 ![Code Grade](https://api.codiga.io/project/29192/status/svg) 
 ![Code Quality Score](https://api.codiga.io/project/29192/score/svg) 
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/jPRO-22/home-loan-calculator.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jPRO-22/home-loan-calculator/context:python)  
-![GitHub](https://img.shields.io/github/license/jPRO-22/home-loan-calculator?color=%23b603fc&style=for-the-badge) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jPRO-22/home-loan-calculator?style=for-the-badge) ![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&style=for-the-badge&up_color=%2303fcb1&up_message=online&url=https%3A%2F%2Fdevpandaz.github.io%2Fhome-loan-calculator%2F)
+![GitHub](https://img.shields.io/github/license/devpandaz/home-loan-calculator?color=%23b603fc&style=for-the-badge) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/devpandaz/home-loan-calculator?style=for-the-badge) ![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&style=for-the-badge&up_color=%2303fcb1&up_message=online&url=https%3A%2F%2Fdevpandaz.github.io%2Fhome-loan-calculator%2F)
 
 This is a home loan calculator that can calculate home loan repayments and provide details like payment breakdown and payment schedule for each calculate result.  
   
@@ -28,7 +28,7 @@ This is a home loan calculator that can calculate home loan repayments and provi
   - [Libraries and Frameworks used](#libraries-and-frameworks-used)
 
 # Official website
-Visit the [official website](https://jpro-22.github.io/home-loan-calculator/) of this app!  
+Visit the [official website](https://devpandaz.github.io/home-loan-calculator/) of this app!  
 
 <p align="center"><img src="./screenshots/website.png" title="The official website" alt="Website"></img></p>
 
@@ -48,11 +48,11 @@ To use this program on Mac, you can download the distributable version here, pro
 You need to have Chrome installed as this app uses Chrome to show the result history or the details of a specific calculate result. 
 
 # Install
-Download and install the app [here](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator-app-installer.zip) or from the [official website](https://jpro-22.github.io/home-loan-calculator). *(This only works on Windows machines.)*  
+Download and install the app [here](https://github.com/devpandaz/home-loan-calculator/releases/latest/download/home-loan-calculator-app-installer.zip) or from the [official website](https://devpandaz.github.io/home-loan-calculator). *(This only works on Windows machines.)*  
 
 or...  
 
-If you don't want to install anything and have Python installed in your system, or, if you are on Mac, [download](https://github.com/jPRO-22/home-loan-calculator/releases/latest/download/home-loan-calculator.zip) the distributable version. Extract the ```home-loan-calculator``` folder out from the zip file. Install the required modules by executing ```pip install -r requirements.txt``` in your system command shell. Then, run ```python main.py``` to run this program.  
+If you don't want to install anything and have Python installed in your system, or, if you are on Mac, [download](https://github.com/devpandaz/home-loan-calculator/releases/latest/download/home-loan-calculator.zip) the distributable version. Extract the ```home-loan-calculator``` folder out from the zip file. Install the required modules by executing ```pip install -r requirements.txt``` in your system command shell. Then, run ```python main.py``` to run this program.  
   
 > *Optionally, before you install the required modules, you can open up a new virtual environment with ```python -m venv venv``` (make sure that you execute this command in the ```~/home-loan-calculator``` directory), then activate the virtual environment by ```venv\scripts\activate```. Only then you install the required modules by executing ```pip install -r requirements.txt```. Then, to run the program, at the same directory, execute ```python main.py```.*  
 >  
@@ -114,7 +114,7 @@ Launch the app and and you will see the home page coming up.
 > <p align="center"><img src="./screenshots/help.png" title="Help" alt="Help"></img></p>  
 > 
 > 1. If you have forgotten how to use the app, you can always come back here to this user manual by clicking on the "See the user manual" button.  
-> 2. If you need further help or want to report a problem, you can create a issue [here](https://github.com/jPRO-22/home-loan-calculator/issues) or [contact me via email](mailto:superjackxh@gmail.com). 
+> 2. If you need further help or want to report a problem, you can create a issue [here](https://github.com/devpandaz/home-loan-calculator/issues) or [contact me via email](mailto:superjackxh@gmail.com). 
 ---
 > #### Dark Mode Support  
 >  
