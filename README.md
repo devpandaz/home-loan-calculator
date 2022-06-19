@@ -4,11 +4,10 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/devpandaz/home-loan-calculator.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/devpandaz/home-loan-calculator/context:python)  
 ![GitHub](https://img.shields.io/github/license/devpandaz/home-loan-calculator?color=%23b603fc&style=for-the-badge) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/devpandaz/home-loan-calculator?style=for-the-badge) ![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&style=for-the-badge&up_color=%2303fcb1&up_message=online&url=https%3A%2F%2Fdevpandaz.github.io%2Fhome-loan-calculator%2F)
 
-This is a home loan calculator that can calculate home loan repayments and provide details like payment breakdown and payment schedule for each calculate result.  
-  
-<p align="center"><img src="./screenshots/home-light.png" title="Home Page" alt="Home"></img></p>
+This is a home loan calculator that can calculate home loan repayments and provide details like payment breakdown and payment schedule for each calculate result.
 
----
+<p align="center"><img src="https://i.imgur.com/Dub8ZoW.png" title="Home Page" alt="Home"></img></p>
+
 - [Home Loan Calculator](#home-loan-calculator)
   - [Official Website](#official-website)
   - [Intro](#intro)
@@ -30,7 +29,7 @@ This is a home loan calculator that can calculate home loan repayments and provi
 # Official website
 Visit the [official website](https://devpandaz.github.io/home-loan-calculator/) of this app!  
 
-<p align="center"><img src="./screenshots/website.png" title="The official website" alt="Website"></img></p>
+<p align="center"><img src="https://i.imgur.com/YL1XxQR.png" title="The official website" alt="Website"></img></p>
 
 # Intro
 This is a Malaysia Secondary Form 3 ASK (*Computer Science Basics*) year-end Python project made possible with [Tkinter](https://docs.python.org/3/library/tkinter.html) and [Eel](https://github.com/ChrisKnott/Eel).
