@@ -8,7 +8,7 @@ This is a home loan calculator that can calculate home loan repayments and
 provide details like payment breakdown and payment schedule for each calculate
 result.
 
-<!-- <p align="center"><img src="https://i.imgur.com/Dub8ZoW.png" title="Home Page" alt="Home"></img></p> -->
+<p align="center"><img src="https://i.imgur.com/Dub8ZoW.png" title="Home Page" alt="Home"></img></p>
 
 - [Home Loan Calculator](#home-loan-calculator)
   - [Official Website](#official-website)
@@ -183,6 +183,9 @@ Launch the app and and you will see the home page coming up.
 > To turn it on or off, just turn on/off the dark mode switch at home page.
 
 ---
+
+# Theme
+This app uses [Sun-Valley ttk theme](https://github.com/rdbende/sun-valley-ttk-theme) by rdbende. 
 
 # Languages used
 
