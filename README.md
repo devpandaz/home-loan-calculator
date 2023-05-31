@@ -8,7 +8,9 @@ This is a home loan calculator that can calculate home loan repayments and
 provide details like payment breakdown and payment schedule for each calculate
 result.
 
-<p align="center"><img src="https://i.imgur.com/Dub8ZoW.png" title="Home Page" alt="Home"></img></p>
+<p align="center"><img src="./screenshots/home-dark.png" title="Home Page in Dark Mode" alt="Home"></img></p>
+
+# Table of Contents
 
 - [Home Loan Calculator](#home-loan-calculator)
   - [Official Website](#official-website)
@@ -33,7 +35,7 @@ result.
 Visit the [official website](https://devpandaz.github.io/home-loan-calculator/)
 of this app!
 
-<!-- <p align="center"><img src="https://i.imgur.com/YL1XxQR.png" title="The official website" alt="Website"></img></p> -->
+<p align="center"><img src="./screenshots/website-beautified.png" title="The official website" alt="Website"></img></p>
 
 # Intro
 
@@ -185,7 +187,7 @@ Launch the app and and you will see the home page coming up.
 ---
 
 # Theme
-This app uses [Sun-Valley ttk theme](https://github.com/rdbende/sun-valley-ttk-theme) by rdbende. 
+This app uses [Sun-Valley ttk theme](https://github.com/rdbende/sun-valley-ttk-theme) by [rdbende](https://github.com/rdbende).
 
 # Languages used
 
